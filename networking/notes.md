@@ -324,3 +324,39 @@ anycast is a network routing method where multiple servers share the same IP add
 One IP address → many locations and User connects → routed to closest server.
 
 broadcast: it uses for send information to everyone at once but there is a point that you can use broadcast only on your local network and not in global internet. and this method doesn’t use IPV6 because IPV6 uses multicast instead.
+
+Ethernet is the most common wired networking technology used to connect devices in a LAN (Local Area Network) using cables. it defines how devices communicate at layer 1 and layer 3 by using ethernet cables, mac address, ethernet frames.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**part 8 – network transceivers**
+A transceiver (transmitter + receiver) is a hardware component that sends and receives network signals so devices can communicate
+
+Where you see transceivers in networking? in Fiber connections (most common) and SFP / SFP+ / QSFP modules in switches and routers and some wireless radios also use transceivers.
+
+SFP and SFP+ are small pluggable transceiver modules used in switches, routers, and network devices to connect them using fiber or sometimes copper.
+
+SFP supports up to 1 GB per second and it uses for 1G fiber links between switches and connecting a switch to a router or another switch.
+
+SFP+ Supports up to 10 Gbps and it uses for 10G uplinks between switches and high-speed connections in data centers.
+
+QSFP is a pluggable transceiver module used for very high-speed network connections, mostly in data centers and core networks.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**part 9 – network topologies**
+
+A star network is a network design where all devices connect to one central device, usually a switch (or sometimes a hub or wireless access point).
+How it works? Each computer/phone/server has its own separate cable/link to the central device and all traffic between devices passes through the central device.
+
+a mesh network is a network design that there are multiple links to the same places and it’s created because even if one the parts is failed the whole of the system can still work.
+** wide area networks use mesh to can keep the connection even with failing in some parts**
+
+A hybrid network is a network that combines two or more different network types or topologies to work together as one system.
+What hybrid can mean in networking
+Hybrid topology is A mix of network layouts, for example: star + mesh or star + bus
+
+Spine-and-leaf architecture is a modern data center network design used to provide high speed, low latency, and scalable connectivity between servers and switches.
+each leaf switch connects to each spine switch and vice versa. leaf switches and spine switches don’t connect to each other.
+
+A point-to-point connection is a direct network link between exactly two devices, where traffic goes only between those two endpoints. for example, router to router link between two branches use this method.
+but this method doesn’t scale well for many devices
+
