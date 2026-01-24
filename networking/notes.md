@@ -1,6 +1,8 @@
-# network notes for cyber
+network notes for cyber
 part 1-OSI model
+
 this model has 7 layers that we can call with this all people seem to need data processing
+
 7=>application
 6=>presentation
 5=>session
@@ -24,7 +26,11 @@ layer 6=> that get data from the network and do something like character encodin
 layer 7=> the layer that we can see what happening in it and has some protocols like HTTPS and….
 
 part2- network devices
+router
+
 router=> A router connects different networks and decides where packets should go next (routing)
+
+switch
 
 switch:
 A switch connects devices in the same network:
@@ -37,11 +43,12 @@ What it uses internally
 ✅ MAC Address Table (CAM table)
 
 Firewall (The Main Security Gate)
+
 What it does
 A firewall decides:
 ✅ allow traffic
 ❌ block traffic
-Based on rules مثل:
+Based on rules sucha s:
 • Source IP
 • Destination IP
 • Port (80, 443, 22…)
@@ -64,29 +71,31 @@ Understands apps like:
 • VPN traffic
 
 IDS and IPS (Intrusion Detection / Prevention)
+
 IDS (Detection only)
 It watches traffic and alerts:
-🚨 “This looks like an attack”
+“This looks like an attack”
 Example:
 • brute force attempts
 • port scanning
 • malware signatures
-✅ It does NOT block automatically.
+It does NOT block automatically.
 
 IPS (Prevention)
 Like IDS but it can:
-❌ block malicious traffic instantly
+block malicious traffic instantly
 
-✅ Security relevance
+Security relevance
 They help detect:
 • exploit attempts
 • known malware behavior
 • suspicious payload patterns
 
-⚠️ Common issue:
+Common issue:
 False positives → may block real users if configured badly.
 
 Load Balancer (Traffic Distributor)
+
 What it does
 Load balancer distributes incoming traffic to multiple servers:
 • Server1
@@ -97,6 +106,7 @@ Used in:
 • cloud systems
 
 Proxy (Middle Man for Web Traffic)
+
 What it does
 A proxy sits between user and internet:
 User → Proxy → Website
@@ -110,19 +120,23 @@ Proxy types
 • Forward proxy (used by users)
 • Reverse proxy (protects servers)
 
-NAS (Network Attached Storage) 🗄️🌐
+NAS (Network Attached Storage) 
+
 NAS = storage shared over a network like a file server.
 • Works at file-level (shared folders)
 • Uses protocols like SMB/CIFS (Windows), NFS (Linux)
 • Easy to set up, common in homes/companies
-✅ Best for: file sharing, backups, media storage
+Best for: file sharing, backups, media storage
 
-SAN (Storage Area Network) ⚡🧱
+SAN (Storage Area Network)
+
 SAN = high-performance storage network for servers.
 • Works at block-level (looks like a raw disk to servers)
 • Uses Fibre Channel or iSCSI
 • Faster, more complex, used in data centers
 • Best for: databases, virtualization (VMware), enterprise systems
+
+A Wireless LAN Controller (WLC)
 
 A Wireless LAN Controller (WLC) is a central device/system used in companies to manage many Wi-Fi Access Points (APs) from one place 📡🧠
 
@@ -134,6 +148,7 @@ What it does (main functions)
 • Handles guest Wi-Fi portals (captive portal / login pages)
 
 Access Point (AP) — a little more
+
 An Access Point is a device that gives Wi-Fi access to a network.
 It basically acts like a wireless bridge:
 Wi-Fi devices (phones/laptops) ↔ wired network (switch/router)
@@ -143,7 +158,7 @@ What an AP does:
 • Connects wireless users to the LAN
 • Handles wireless security like WPA2/WPA3
 • Manages multiple clients at once
-📌 In companies, APs are everywhere because they cover a whole building.
+In companies, APs are everywhere because they cover a whole building.
 
 Difference between an Access Point and a Modem (Very important)
 
@@ -163,7 +178,8 @@ AP = gives Wi-Fi connection inside your local network.
 AP connects:
 Wireless devices ↔ your local network
 
-part 3 network fundamentals
+part 3==> network fundamentals
+
 content delivery network(CDN): it uses to transfer data in this part of the world to another part of the world and it’s graphically distributed.
 
 VPN: secure private data traversing a public network and It has ability to encrypt and decrypt data during the traverse and it sometimes has firewall.
@@ -182,6 +198,7 @@ google.com → IP address
 in routers TTL is with hop but in DNS TTL is with second.
 
 part 4=>cloud models
+
 we have 3 types of deployment models :
 1- public => for everyone over the internet
 2- private => your own virtualized local data center
@@ -201,6 +218,7 @@ Main difference: IaaS = you manage more, PaaS = provider manages more.
 if we want to manage services based on which one is more on provider management it will be like this: SaaS  PaaSlaaS
 
 part 5 : introduction to IP
+
 what IP protocol does? transfer data from a device to another device in another part of the world
 
 IP protocol is like a truck that contains a lot of boxes in it and that boxes are our data that have some other protocols like TCP and UDP inside them.
