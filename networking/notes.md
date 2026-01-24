@@ -312,3 +312,15 @@ the data is encrypted here but the IP header is not and it can be read by someon
 
 2)tunnel mode: it’s the sequence new IP header – IPsec header – IP header – data – IPsec trailers
 in tunnel mode even IP header is encrypted and it is much more secure than the other one.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**part 7 – network communication**
+
+unicast -> one of the most important ways to send information in network it sends information from one station directly to other station. search websites, emails or file transfer probably use unicast.
+
+multicast -> it uses to deliver information from one sender to many recipients simultaneously. we can’t use multicast in a different or very large network easily because it’s specialized and must be supported by the network.
+
+anycast is a network routing method where multiple servers share the same IP address, and your traffic is automatically sent to the nearest or best server (based on routing).
+One IP address → many locations and User connects → routed to closest server.
+
+broadcast: it uses for send information to everyone at once but there is a point that you can use broadcast only on your local network and not in global internet. and this method doesn’t use IPV6 because IPV6 uses multicast instead.
