@@ -137,7 +137,7 @@ SAN = high-performance storage network for servers.
 
 A Wireless LAN Controller (WLC)
 
-A Wireless LAN Controller (WLC) is a central device/system used in companies to manage many Wi-Fi Access Points (APs) from one place 📡🧠
+A Wireless LAN Controller (WLC) is a central device/system used in companies to manage many Wi-Fi Access Points (APs) from one place
 
 What it does (main functions)
 • Controls and configures APs centrally (SSID, passwords, channels, power)
@@ -183,9 +183,9 @@ content delivery network(CDN): it uses to transfer data in this part of the worl
 
 VPN: secure private data traversing a public network and It has ability to encrypt and decrypt data during the traverse and it sometimes has firewall.
 
-quality of service  this list has duty to prioritize something to other thing to send or keep or … in the network and it uses traffic shaping and packet shaping and you change things in its list in routers or modems.
+quality of service => this list has duty to prioritize something to other thing to send or keep or … in the network and it uses traffic shaping and packet shaping and you change things in its list in routers or modems.
 
-time to live (TTL) this is important because we have to manage time that something have to do and we use this to close and stop a work if this time ends.
+time to live (TTL)=> this is important because we have to manage time that something have to do and we use this to close and stop a work if this time ends.
 for example, sometimes routers looping happens that means router A thinks next router B is next and router B thinks that router A is next and it goes over and over. so in this case TTL will stop this loop after its time ends.
 
 and here IP protocol has special rule because after any pass from router IP address decrease the number of TTL, and this number is 64 for Linux and MAC and 128 for WINDOWS.
