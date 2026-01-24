@@ -1,5 +1,5 @@
 network notes for cyber
-***OSI model ***
+***part 1 - OSI model ***
 
 this model has 7 layers that we can call with this all people seem to need data processing
 
@@ -24,8 +24,8 @@ layer 5=> for sending information from one part of network to the other part we 
 layer 6=> that get data from the network and do something like character encoding and application encryption and ….. this layer combined with the next layer
 
 layer 7=> the layer that we can see what happening in it and has some protocols like HTTPS and….
-
-part2- network devices
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+***part2- network devices***
 router
 
 router=> A router connects different networks and decides where packets should go next (routing)
@@ -176,8 +176,8 @@ AP = gives Wi-Fi connection inside your local network.
 
 AP connects:
 Wireless devices ↔ your local network
-
-part 3==> network fundamentals
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+****part 3==> network fundamentals ****
 
 content delivery network(CDN): it uses to transfer data in this part of the world to another part of the world and it’s graphically distributed.
 
@@ -195,9 +195,8 @@ Converts:
 google.com → IP address
 
 in routers TTL is with hop but in DNS TTL is with second.
-
-part 4=>cloud models
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**part 4=>cloud models**
 we have 3 types of deployment models :
 1- public => for everyone over the internet
 2- private => your own virtualized local data center
@@ -215,8 +214,8 @@ PaaS (Platform as a Service): you deploy your application code, and the provider
 Main difference: IaaS = you manage more, PaaS = provider manages more.
 
 if we want to manage services based on which one is more on provider management it will be like this: SaaS  PaaSlaaS
-
-part 5 : introduction to IP
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**part 5 : introduction to IP**
 
 what IP protocol does? transfer data from a device to another device in another part of the world
 
@@ -239,8 +238,8 @@ and on the client side there are ephemeral ports that contains ports from 1024 u
 TCP and UDP ports can be any number between 0 and 65,535. port is just a way for better finding and communication not security.
 
 TCP and UDP port numbers are different from each other. for example, web server has 80 web server port number and email server has 143 port number both on TCP and VOIP server has port number 5004 on UDP server
-
-***common ports ***
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+***part 6 -common ports ***
 
 FTP: transfer files between systems unlike other ports FTP has two port numbers TCP 20 and 21 and gives user choice for list, add, delete and ….
 
