@@ -27,11 +27,8 @@ layer 7=> the layer that we can see what happening in it and has some protocols 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***part2- network devices***
-router
 
 router=> A router connects different networks and decides where packets should go next (routing)
-
-switch
 
 switch:
 A switch connects devices in the same network:
