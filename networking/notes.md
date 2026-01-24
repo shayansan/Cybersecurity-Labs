@@ -181,11 +181,11 @@ google.com → IP address
 
 in routers TTL is with hop but in DNS TTL is with second.
 
-part 4cloud models
+part 4=>cloud models
 we have 3 types of deployment models :
-1- public  for everyone over the internet
-2- private  your own virtualized local data center
-3- hybrid  a mix of public and private
+1- public => for everyone over the internet
+2- private => your own virtualized local data center
+3- hybrid => a mix of public and private
 
 one type is software as a server : SaaS means you use a software application through the internet, and the provider hosts and manages everything for you (servers, updates, storage, availability).
 You usually access it by:
@@ -201,3 +201,24 @@ Main difference: IaaS = you manage more, PaaS = provider manages more.
 if we want to manage services based on which one is more on provider management it will be like this: SaaS  PaaSlaaS
 
 part 5 : introduction to IP
+what IP protocol does? transfer data from a device to another device in another part of the world
+
+IP protocol is like a truck that contains a lot of boxes in it and that boxes are our data that have some other protocols like TCP and UDP inside them.
+
+between client and server, we have an instruction like this:
+
+ethernet header – IP – TCP – HTTP data – ethernet trailer
+
+TCP: is a protocol for sending data that has reliable delivery that checks whether data sent correctly or not and if it didn’t receive well, data will send again and also receiver can send message to sender that I lost this part of data.
+
+UDP: it’s another type of protocol for sending data and it’s connectionless because there is no rule or setting or even checking for sending data. in this type of protocol we can’t guarantee that data will receive correctly.
+
+after receiving data at the destination now it has to find the exact place of device and it will find the exact place with using ports.
+
+there is a list of non-ephemeral ports in server side that contains from 0 until 1023 port numbers and they’re stable for example the most important ports of web servers are 80 and 443
+
+and on the client side there are ephemeral ports that contains ports from 1024 until 65,535 and client can use them as a temporary port.
+
+TCP and UDP ports can be any number between 0 and 65,535. port is just a way for better finding and communication not security.
+
+TCP and UDP port numbers are different from each other. for example, web server has 80 web server port number and email server has 143 port number both on TCP and VOIP server has port number 5004 on UDP server
