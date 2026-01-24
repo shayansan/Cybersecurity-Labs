@@ -311,6 +311,7 @@ we have two modes in sending data with IPsec:
 the data is encrypted here but the IP header is not and it can be read by someone else who capture the packets.
 
 2)tunnel mode: it’s the sequence new IP header – IPsec header – IP header – data – IPsec trailers
+
 in tunnel mode even IP header is encrypted and it is much more secure than the other one.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -329,6 +330,7 @@ Ethernet is the most common wired networking technology used to connect devices 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 8 – network transceivers**
+
 A transceiver (transmitter + receiver) is a hardware component that sends and receives network signals so devices can communicate
 
 Where you see transceivers in networking? in Fiber connections (most common) and SFP / SFP+ / QSFP modules in switches and routers and some wireless radios also use transceivers.
