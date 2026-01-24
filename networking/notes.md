@@ -40,14 +40,13 @@ A switch connects devices in the same network:
 The switch uses MAC addresses to forward frames.
 
 What it uses internally
-✅ MAC Address Table (CAM table)
+MAC Address Table (CAM table)
 
 Firewall (The Main Security Gate)
 
 What it does
 A firewall decides:
-✅ allow traffic
-❌ block traffic
+allow traffic not block traffic
 Based on rules sucha s:
 • Source IP
 • Destination IP
