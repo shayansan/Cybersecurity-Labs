@@ -362,3 +362,65 @@ each leaf switch connects to each spine switch and vice versa. leaf switches and
 A point-to-point connection is a direct network link between exactly two devices, where traffic goes only between those two endpoints. for example, router to router link between two branches use this method.
 but this method doesn’t scale well for many devices
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 10 – network architecture
+
+Three-tier distribution is a traditional enterprise network design that organizes the network into three layers to make it scalable, manageable, and reliable.
+
+core -> the central point of all of our resources such as servers, applications, databases and other important points are all contained in core network.
+
+distribution-> the midpoint between the core and the users; its main role is routing between VLANs and enforcing policies and controlling which networks can talk to each other.
+
+access -> where the users connect and provides network access to users and applies basic controls like VLAN and port security.
+
+we have collapsed core that core and distribution layer combined together and we just have two-tier model. and their difference with three-tier is it’s simpler to design and support and cheaper.
+
+In networking (especially in data centers and cloud), traffic flows are described by direction:
+
+North-South traffic:
+Meaning: traffic going in and out of a network  
+• North = outside networks (internet, external users)  
+• South = inside networks (your servers/apps)  
+Why it matters in cybersecurity? Usually protected by perimeter devices like firewalls, WAF, DDoS protection and focus are on controlling external access.
+
+East-West traffic
+Meaning: traffic moving inside the network between internal systems  
+Why it matters in cybersecurity? Most lateral movement happens here after an attacker gets inside and needs segmentation, internal firewalls, and monitoring
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 11 – IPV4 addressing
+
+every device needs a unique IP address to can connect and communicate in the internet.
+
+The subnet mask tells which part of the IP is the network part and which part is the device part. for example: Subnet mask: 255.255.255.0 (also written as /24)
+that means devices inside this network are from 192.168.1.1 to 192.168.1.254
+
+The gateway is the router IP inside your local network that can send traffic to other networks (like the internet).
+
+the relation between them:
+is the destination in my local network? it uses subnet mask for this decision and if it is, it sends directly to that device with ARP and find its MAC.
+if not local send it to gateway -> it sends the traffic to the gateway and then the gateway routes it to the internet.
+
+A loopback address is a special IP address a device uses to communicate with itself. it uses for testing and internal communication inside the same machine.
+**traffic sent to the loopback never leaves the device and never goes into the network. **
+
+we have some IP address that should not use by the other devices because they’re for future use or testing. all of the class E addresses are reserved.
+
+A virtual IP address is an IP address that is not permanently tied to one specific physical device, but can move between devices or represent a service.
+
+IP address is in layer 3 of OSI model and It has 4 groups of 8 bits, and any 8 bits is equal to 1 byte.
+
+DHCP is a network service that automatically gives devices the network settings they need to communicate.
+when a device connects to a network DHCP can assign IP address, subnet mask, default gateway and DNS server and DHCP avoid IP addresses conflicts and make easier to manage network.
+
+APIPA uses when there is no DHCP and can only communicate to other local devices and can’t forward to the internet by routers. it has a range from 169.254.0.1 until 169.254.255.254
+
+there was a problem that after increasing the devices in whole of the world we didn’t have enough IP so we decided to use private IP address that use in our own local system.
+
+private IP address is not internet routable but can be routed internally with using NAT.
+
+we have three ranges for private IP addresses:
+1-10.0.0.0 to 10.255.255.255
+2-172.16.0.0 to 172.31.255.255
+3-192.168.0.0 to 192.168.255.255
+
