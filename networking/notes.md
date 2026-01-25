@@ -423,4 +423,51 @@ we have three ranges for private IP addresses:
 1-10.0.0.0 to 10.255.255.255
 2-172.16.0.0 to 172.31.255.255
 3-192.168.0.0 to 192.168.255.255
+چ
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 12 - subnetting
 
+there are three classes for subnetting architecture that not used since 1993
+class A -> 255.0.0.0
+class B -> 255.255.0.0
+class C -> 255.255.255.0
+
+numbers are network portion and zeros are hosts portion
+
+if the first number of IP address is between 0-127 it’s class A , if it’s between 128-191 class B and between 192-223 class C.
+
+we also have class D that uses for multicast communication and doesn’t have default subnet mask but it’s first number range is 224-239
+
+we also have class E that is reserved and its Ip range is between 240 and 255.
+
+the construction of a subnet contains for part
+1- network address
+2- first usable host address
+3- network broadcast address
+4- last usable host address
+
+for example, 10.74.222.11 its class A therefore its subnet is 255.0.0.0 and its network address is 10.0.0.0 and first host address is 10.0.0.1 and broadcast address is 10.255.255.255 and the last usable host address is 10.255.255.254
+
+at the moment after 1993 we use CIDR subnetting that is a way to write IP networks using a slash notation that shows how big the network is.
+
+example of CIDR:
+ /16 = 255.255.0.0 (bigger network, more devices)
+ /24 = 255.255.255.0 (common home/office LAN)
+
+for example, 11111111.11111111.00000000.00000000 is /16 with CIDR.
+another example, 11111111.11111111.11111111.11000000 is /26 with CIDR.
+
+We subnet a network to split one big network into smaller networks so it becomes easier to manage, performs better, and is more secure.
+this work has some advantages:
+1- reduce broadcast traffic
+2- better security and isolation
+3- easier management
+4- efficient IP address usage
+
+VLSM is a subnetting method where you create multiple subnets of different sizes inside the same network, instead of making all subnets the same size.
+
+for example, if we have one network 192.168.1.0/24 we can create a subnetting system like this:
+one subnet for 100 users, one subnet for 40 users, one subnet for 10 users and one subnet for 2 devices.
+
+small note:
+in every subnet the first IP is network address and the last IP is broadcast address and we can’t use them for devices (except some special cases).
