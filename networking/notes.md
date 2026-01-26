@@ -530,3 +530,132 @@ Why it matters in cybersecurity and IT?
 2- helps audit changes and detect unauthorized edits
 3- supports teamwork without overwriting each other’s work
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 16 – IPV6 addressing
+
+we have almost 20 billion devices in whole of the world and it’s progressing but IPV4 can only support 4.29 billion. therefore, for this problem we made IPV6 that provides a larger address space. IPV4 has 32 bits while IPV6 has 128 bits. we separate them with: instead of.
+
+we have 4 parts with 8 binary numbers in IPV4 but in IPV6 we have 8 parts with 16 binary numbers.
+
+we can write IPV6 address in
+first step -> 2601:04C3:4002:BE00:0000:0000:0000:0066
+second step -> 2601:4C3:4002:BE00:0:0:0:66
+third step -> 2601:4C3:4002:BE00::66
+
+communicating between IPV4 and IPV6 is a big challenge because they can’t understand each other and it requires an alternate form of communication we have some methods for it:
+
+Tunnel: encapsulate one protocol within another or dual stack have the option to use both IPV4 and IPV6. there is also another method that calls translate to convert IPV4 to IPV6 address.
+
+dual-stack routing allows us to can run both IPV4 and IPV6 at the same time on the same system. for IPV4 it will be configured with IPV4 addresses and maintain its routing table and it also maintain a separate IPv6 routing table.
+
+for translation between these two IPV we need a NAT64 to translate what is necessary for communicating and allows the system to keep communicating.
+
+NAT64 needs DNS64 server to work well because in the first step it has to send information to DNS server to can get DNS record and then if it’s necessary it will reply back with IPv6 to system and after this it will send with NAT64 to the web server.
+
+security note:
+IPv6 is not automatically “more secure” than IPv4. it can still be attacked if it’s misconfigured.
+also some networks forget to monitor IPv6 traffic, so attackers may use IPv6 to bypass old security rules if firewall/IDS are not configured for it.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 17- routers
+
+the routers have a relatively simple job but the underlying technology is complex. the first step is identify the destination IP address, the router has a table to choose what should it do with packets. if packets are in local routers, they will send easily to that device but if it’s not in the local network, it will forward to next router or gateway to find its path.
+
+A router knows which next router to send a packet to by using its routing table. a router table contains somethings like destination network, next hop IP address, outgoing interface.
+
+So, when a router receives a packet, it checks:
+destination IP → which route matches? → send to next hop.
+
+if a router couldn’t find that what should it do with packets it will discard that packet.
+
+sometimes static routing is a useful thing specially when you have small network or you want more secure routing. so, you can manage and administrate your router manually.
+
+when you have a lot of routers that their management manually is too complicated you can use dynamic routing that doesn’t need manual route calculations and it’s very scalable.
+
+for example, when we have an address that router can not see the next router send this address as an update for before router table and that router can find that way after updating.
+
+there is a protocol for dynamic routing first it will listen for subnet information from other routers and after that in the second step it will provide subnet information for other routers and after that in the third step it interprets information and determine the best path for routing. and after this if any network changes occur the updates will be available for routers.
+
+EIGRP is a dynamic routing protocol used inside a network (an IGP) to automatically share routes between routers and choose the best path.
+this protocol helps routers learn which networks exist or how to reach them or which path is the best and it is mainly associated with Cisco environments. this protocol cleanly manages topology changes and speed of convergence is always a concern.
+
+OSPF is a dynamic routing protocol used inside organizations to automatically share routes between routers and choose the fastest path using link-state information. this protocol is based on the connectivity between routers.
+
+BGP is a routing protocol used between large networks (autonomous systems) on the internet to exchange routes and choose the best path based on policies instead of only shortest distance. this protocol uses port TCP with number 179.
+
+A sub interface is a virtual interface created on a physical router or switch interface to allow that one physical port to handle multiple separate networks, usually using VLAN tagging.
+how it works? one physical interface connect -> multiple sub interfaces connect to that physical -> each sub interface is linked to a VLAN ID and has its own IP address
+
+Router-on-a-stick -> A router uses sub interfaces to route between VLANs when there is only one physical link to a switch.
+
+security note:
+Routers are a common target because if attacker controls routing, they can do MITM, redirect traffic, or cause outage.
+so router management should be protected with strong passwords, MFA, and management access should be limited (for example only from admin VLAN).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part 18 -NAT
+
+NAT -> is a function usually done by routers or firewalls that changes IP addresses in packets, and its main purpose is to let private internal devices communicate with external networks.
+
+The most common situation is in home networks where many devices use private IPv4 addresses such as 192.168.1.10 or 10.0.0.25, but the ISP gives you only one public IP, so NAT allows all those internal devices to share that single public IP when they access websites, apps, or cloud services.
+
+NAT works by rewriting the source IP address and then keeping a translation record. When the reply comes back from the internet, the router uses that record to know exactly which internal device should receive it.
+
+PAT: Here the router not only changes the source IP but also changes the source port so that many internal connections can exist at the same time using one public IP, and it tracks them using a NAT table that maps inside local IP:port to inside global public IP:port.
+
+security note:
+NAT is not a security control by itself, but it hides internal IPs from direct access from the internet.
+real security still needs firewall rules, patching, and proper segmentation.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 19 – VLANs and trunking
+
+LAN-> they’re a group of devices that are in a limited physical area like home or office in the same broadcast domain. In a LAN, devices usually share the same local IP range and can easily reach each other depending on the security rules.
+The main purpose of a LAN is to let local devices share resources like printers, files, servers, and internet access.
+
+VLAN is a way to split one physical LAN into multiple separate logical networks. It is called “virtual” because the separation is done by configuration on switches, not by physically building separate networks with different switches and cables.
+
+The biggest reason VLANs are used is segmentation, which improves security and organization.
+For example, a company can create separate VLANs for employees, guests, servers, IP cameras and…
+so, if one network is attacked or infected, the attacker cannot easily reach everything else.
+
+Default VLAN is basically the VLAN that a switch uses automatically when you first plug it in and don’t configure anything and on the most of the switches this is VLAN 1.
+
+Native VLAN is something different and it only matters on trunk links, meaning the links that carry multiple VLANs between switches, or between a switch and a router.
+
+A Layer 3 switch is basically a normal switch that can also do routing, meaning it can forward traffic not only by MAC addresses (Layer 2) but also by IP addresses (Layer 3). It’s commonly used in companies to route between VLANs quickly inside the network without needing a separate router for inter-VLAN routing.
+
+The main reason fragmentation exists is something called MTU (Maximum Transmission Unit), which is the largest packet size a network link can carry in one piece.
+For example, Ethernet commonly has an MTU of 1500 bytes, so if a device tries to send an IP packet bigger than what the next network can handle, that packet cannot pass in its original size.
+
+In that situation there are only two choices: either the packet gets dropped and the communication fails, or the packet is split into smaller pieces so it can fit through the network.
+
+Fragmentation is the method that splits the packet into smaller fragments, sends them separately, and then the receiver reassembles them back into the original packet.
+
+Also, modern networks try to avoid fragmentation as much as possible using a better method called Path MTU Discovery, where devices learn the best packet size to use so packets do not need to be fragmented in the first place, but fragmentation still exists as a fallback so traffic can still work when MTU issues happen.
+
+Jumbo frames are Ethernet frames that are larger than the normal standard size, used to send more data in each frame and improve performance in fast networks.
+Normally, Ethernet MTU is 1500 bytes, but jumbo frames use a bigger MTU, commonly around 9000 bytes (it can vary depending on the equipment).
+
+The main benefit of jumbo frames is that they reduce overhead, because sending one large frame is more efficient than sending many small frames, so it can improve throughput and reduce CPU usage on servers and switches.
+
+security note:
+VLANs improve security but they don’t fully block attacks by themselves.
+if trunk ports are misconfigured attackers may do VLAN hopping, so trunk ports should be limited and not used for normal user devices.
+also guest VLAN should be separated from internal systems.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 20- spanning tree protocol
+
+Loop protection is the set of mechanisms used to stop Layer 2 loops from happening, because loops in a switched network can create broadcast storms, duplicate frames, and can crash the whole LAN.
+
+The basic idea of STP is that when switches are connected with multiple redundant links, STP detects the possible loop paths and blocks some ports so that only one logical forwarding path remains active, while the backup links stay ready in case the main link fails.
+
+STP does this by using BPDUs (Bridge Protocol Data Units), which are small control messages that switches send to each other to decide which switch should be the root bridge and which ports should be forwarding or blocking
+
+So in short, loop protection in STP is not just blocking ports, it is the full set of STP decisions plus extra safety features like BPDU Guard, Root Guard, and Loop Guard that prevent both accidental and malicious Layer 2 loops.
+
+security note:
+STP can be abused by attackers if they plug a rogue switch and try to become the root bridge.
+that’s why features like BPDU Guard and Root Guard are important in enterprise networks.
