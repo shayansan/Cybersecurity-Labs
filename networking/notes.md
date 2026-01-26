@@ -424,7 +424,8 @@ we have three ranges for private IP addresses:
 2-172.16.0.0 to 172.31.255.255
 3-192.168.0.0 to 192.168.255.255
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------part 12 - subnetting
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 12 - subnetting
 
 there are three classes for subnetting architecture that not used since 1993
 class A -> 255.0.0.0
@@ -471,7 +472,8 @@ one subnet for 100 users, one subnet for 40 users, one subnet for 10 users and o
 small note:
 in every subnet the first IP is network address and the last IP is broadcast address and we can’t use them for devices (except some special cases).
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------part 13 – software defined networking 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 13 – software defined networking 
 
 SDN is a networking model where the network is controlled by software instead of configuring every switch/router manually.
 
