@@ -645,7 +645,7 @@ VLANs improve security but they don’t fully block attacks by themselves.
 if trunk ports are misconfigured attackers may do VLAN hopping, so trunk ports should be limited and not used for normal user devices.
 also guest VLAN should be separated from internal systems.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 part 20- spanning tree protocol
 
 Loop protection is the set of mechanisms used to stop Layer 2 loops from happening, because loops in a switched network can create broadcast storms, duplicate frames, and can crash the whole LAN.
@@ -697,7 +697,7 @@ Wireless mesh is a wireless network design where multiple access points or nodes
 
 In a wireless mesh, each node can communicate with nearby nodes and forward traffic for others, so data can travel through multiple paths to reach its destination.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 part 22- network documentation
 
 A physical network map is a diagram that shows the real, physical layout of a network and how devices are actually connected to each other.
@@ -757,8 +757,35 @@ This is often used to connect two locations over long distances without cables, 
 Infrastructure mode is the standard way most Wi-Fi networks work, where wireless devices connect through an access point instead of connecting directly to each other.
 
 The access point is usually connected to a wired network, such as a switch or router, which allows wireless users to access internal resources like servers and printers, as well as external networks like the internet.
-
 This makes infrastructure mode suitable for homes, offices, schools, and enterprise environments.
+
+-----------------------------------------------------------------------------------------------------------
+part 23 – SNMP
+
+SNMP is a protocol used to monitor and manage network devices remotely, such as routers, switches, firewalls, servers, and printers.
+
+Its main job is to let a central monitoring system read status information from devices and sometimes change certain settings.
+Instead of logging into every device one by one, an admin can use SNMP to collect health and performance data from all devices in one place.
+
+The SNMP manager is the monitoring system, and the SNMP agent is a small service running on each network device.
+The agent collects local data like interface traffic, CPU load, memory usage, link status, and error counters, and the manager queries or receives this data.
+
+The data in SNMP is organized as OIDs (object identifiers) inside a structure called the MIB (management information base).
+Each measurable value, like interface bytes in or device temperature, has its own OID, so monitoring tools know exactly what to request and read.
+
+SNMP can also send alerts using traps or informs.
+Instead of waiting to be asked, a device can automatically send a message to the manager when something important happens, like an interface going down or a power supply failing.
+
+there are different versions of SNMP:
+SNMPv1 and SNMPv2c use community strings like passwords but they are sent in plaintext.
+SNMPv3 adds authentication and encryption and is the recommended secure version.
+
+From a cybersecurity point of view, SNMP must be configured carefully.
+Weak community strings or exposed SNMP services can let attackers read network details or change configurations.
+
+security note:
+default community strings like “public” and “private” should always be changed and SNMP access should be limited by IP address.
+if possible use SNMPv3 instead of v1/v2c because it supports encryption and secure authentication.
 
 security note:
 Infrastructure mode is more secure and manageable than ad-hoc mode because it supports authentication, encryption, access control, and centralized monitoring.
