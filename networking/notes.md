@@ -789,3 +789,119 @@ if possible use SNMPv3 instead of v1/v2c because it supports encryption and secu
 
 security note:
 Infrastructure mode is more secure and manageable than ad-hoc mode because it supports authentication, encryption, access control, and centralized monitoring.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part 24 – logs and monitoring
+
+Logs and monitoring in networks are about recording what is happening and continuously watching network behavior so you can detect problems, attacks, misconfigurations, and performance issues.
+
+Routers, switches, firewalls, servers, VPN gateways, wireless controllers, and security tools all produce logs.
+
+These logs can include things like user logins, configuration changes, interface up/down events, firewall allowed or blocked traffic, routing changes, VPN connections, and authentication results.
+
+one of the methods to gather traffic statistics is NetFlow that is a standard collection method and there are many products and companies work on it.
+
+In NetFlow, the probe and the collector are the two main functional roles that make flow monitoring work:
+one creates the flow records, the other receives and analyzes them.
+
+if you want to compare your network with analyzers that it works better or worse, you have to use network performance baseline that shows function of network in a normal day and you compare it later to check the network functionality.
+
+Syslog is a standard protocol used to send log messages from network devices and systems to a central logging server for storage and analysis.
+
+Each device acts as a syslog client and sends event messages to a syslog server.
+These messages include things like login attempts, configuration changes, interface status changes, firewall blocks, routing events, and system errors.
+
+The syslog server receives, stores, and organizes these messages so administrators and security teams can search and analyze them.
+
+Syslog is a key source of visibility.
+It helps detect attacks, policy violations, and misconfigurations by centralizing logs like failed logins, privilege changes, blocked connections, and service crashes.
+
+SIEM is a centralized security system that collects, correlates, and analyzes logs and events from many sources to detect threats and support incident response.
+
+It gathers data from devices and systems like firewalls, servers, endpoints, network equipment, authentication systems, and applications, then normalizes and correlates those events to find suspicious patterns.
+
+security note:
+logs are only useful if they are reviewed and retained.
+time synchronization (NTP) is critical, otherwise log timelines become unreliable during investigations.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part 25 – DHCP
+
+DHCP is a network service that automatically gives devices the IP settings they need to communicate on a network.
+
+When a device like a laptop or phone connects to a network, it usually does not have an IP address yet.
+DHCP automatically assigns the needed configuration so the device can start communicating without manual setup.
+
+how DHCP works? when a device connects it follows a simple 4 step process:
+1- discover -> client broadcasts asking for a DHCP server
+2- offer -> server offers an available IP configuration
+3- request -> client asks to use that offered IP
+4- acknowledge -> server confirms and assigns it
+
+The assigned IP is not permanent.
+It is given as a lease for a certain time. The client renews the lease before it expires.
+
+DHCP can be abused if not controlled.
+A rogue DHCP server can give fake gateway or DNS settings and redirect traffic.
+DHCP starvation attacks can try to consume all available IPs.
+
+Protections include DHCP snooping on switches, network segmentation, and monitoring DHCP logs.
+
+DHCP relay is a function that lets devices in one network (subnet/VLAN) get IP addresses from a DHCP server that is located in a different network.
+
+Normally, DHCP uses broadcast messages when a client asks for an IP address.
+Broadcast traffic does not cross routers, so a DHCP server in another subnet would not hear the request.
+DHCP relay solves this problem by forwarding the request as unicast to the real DHCP server.
+
+It allows you to keep one central DHCP server instead of running a separate DHCP server in every VLAN.
+This simplifies management and logging and is very common in enterprise networks with many VLANs.
+
+A DHCP pool is a defined range of IP addresses and related network settings that a DHCP server can assign to clients.
+
+DHCP pools usually contains:
+IP address range, subnet mask, default gateway, DNS servers, lease time.
+
+Typically, each subnet or VLAN has its own DHCP pool.
+The DHCP server chooses the correct pool based on where the request comes from (directly or via DHCP relay).
+
+Pools should be sized correctly and monitored.
+Too small causes address exhaustion, too large wastes space and reduces control.
+Critical devices should usually be excluded or reserved.
+
+there is an interesting point that DHCP keeps a list of past assignments and if you connect to a network a lot, you will probably get the same IP address again (reservation or sticky lease behavior).
+
+DHCP gives temporary IP addresses and after passing lease time it checks whether that device is still connected or not.
+with this method, it can keep free IP addresses for new devices.
+
+there is another timer behavior:
+T1 timer is used to renew with the original DHCP server (usually at 50% of lease time).
+T2 timer is used to rebind with any DHCP server if the original is down (usually at 87.5% of lease time).
+
+we have many common options for DHCP that we can use like subnet mask, domain name server, domain name and etc.
+but there is a point that not all DHCP servers support every option configuration.
+
+SLAAC is one of the main IPv6 methods that lets devices automatically create their own IPv6 address without needing a DHCP server.
+
+In IPv6 there is no broadcast like IPv4.
+Instead, it uses multicast and neighbor discovery.
+
+Many configuration tasks that required DHCP and ARP in IPv4 are handled by ICMPv6 Neighbor Discovery messages in IPv6.
+
+SLAAC means Stateless Address Auto Configuration.
+It is a method where a device builds its own IPv6 address automatically using information announced by the local router.
+
+When a device connects to an IPv6 network, it listens for Router Advertisement messages sent by the router.
+These messages include the IPv6 network prefix and flags.
+
+The device takes that prefix and combines it with an interface identifier (often derived from its MAC address or generated randomly) to form its full IPv6 address.
+It then runs duplicate address detection to ensure no one else is using it.
+
+Advantages of SLAAC include zero manual configuration, no DHCP dependency for addressing, and fast plug-and-play behavior.
+It is widely used in IPv6 networks, especially for client devices.
+
+security note:
+SLAAC depends on router advertisements.
+fake or rogue router advertisements can redirect traffic.
+networks often use RA Guard and port controls on switches to block unauthorized router advertisements.
