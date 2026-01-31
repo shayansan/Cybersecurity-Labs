@@ -905,3 +905,78 @@ security note:
 SLAAC depends on router advertisements.
 fake or rogue router advertisements can redirect traffic.
 networks often use RA Guard and port controls on switches to block unauthorized router advertisements.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 26 – DNS
+
+DNS is one of the most important concepts in network and cybersecurity because it’s like a translator and hackers have a lot of ways to abuse it for their own profit.
+
+DNS does a simple work, it translates website name to its IP address and helps us to have access to websites easier.
+but it can also be dangerous because if somebody can manipulate DNS, traffic can be redirected, monitored, or blocked without any clear sign for the user.
+
+some parts of DNS architecture are very important from a security perspective.
+
+recursive resolvers are high-value targets because they serve many users and cache answers.
+if an attacker compromises a recursive resolver, many users can be affected at the same time.
+
+Authoritative servers are critical because if they are compromised, attackers can change DNS records and redirect all traffic for a domain to malicious servers.
+
+Encryption is changing DNS.
+Technologies like DoH (DNS over HTTPS) and DoT (DNS over TLS) encrypt DNS traffic, which protects user privacy but also reduces visibility for traditional network monitoring.
+
+From a cybersecurity perspective, this means defenders must adapt by monitoring endpoints, DNS resolvers themselves, or using security-aware DNS services.
+
+In incident response, DNS is often one of the first places to look.
+DNS logs help answer questions like:
+which domains a compromised host contacted,
+when it started,
+whether other systems contacted the same domains,
+and whether blocking a domain will contain the threat.
+
+One common attack is DNS spoofing or cache poisoning, where an attacker tricks a resolver into caching a fake IP address for a domain.
+This can redirect users to malicious servers even when they type the correct website name.
+
+Another major abuse is DNS tunneling, where attackers hide command-and-control traffic or data exfiltration inside DNS queries and responses, because DNS is often allowed through firewalls.
+
+security note:
+DNS filtering, DNS logging, and anomaly detection are very important defenses.
+unusual domain names, very long queries, or high-frequency DNS requests can be signs of tunneling or malware activity.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 27 – VPN
+
+VPN is a virtual private network that makes a tunnel over the public internet and encrypts data.
+VPNs usually use a component called a concentrator, often integrated into firewalls, which handles encryption and decryption of traffic.
+
+we have some main types of VPN.
+
+client-to-site VPN:
+this type of VPN allows individual users to securely connect from their device to a company’s internal network over the internet.
+
+In this setup, the user installs a VPN client on their laptop or phone.
+When the VPN is turned on, the client creates an encrypted tunnel to the company’s VPN gateway.
+All traffic that is meant for internal company resources is sent through this encrypted tunnel.
+
+The traffic between the user and the company network is encrypted, protecting it from eavesdropping on public Wi-Fi or untrusted networks.
+
+Authentication is also enforced, usually with usernames and passwords, certificates, or multi-factor authentication, so only authorized users can connect.
+
+site-to-site VPN:
+in this type, entire networks are connected together.
+all packets sent between the two sites are encrypted and tunneled.
+
+concentrators usually run on firewalls or dedicated VPN devices.
+any packet that passes through the firewall toward the remote site is encrypted before sending and decrypted when received.
+
+site-to-site VPN is commonly used to connect branch offices, data centers, or cloud networks together securely.
+
+clientless VPN:
+A clientless VPN allows users to access internal resources without installing a VPN client application.
+
+Instead of a full tunnel, the user connects through a web browser, usually over HTTPS.
+this is commonly used for accessing specific internal web applications or portals.
+
+security note:
+VPNs provide confidentiality, but they do not automatically make a network secure.
+weak authentication, stolen credentials, or compromised endpoints can still lead to breaches.
+for this reason, VPN access should be combined with MFA, device checks, and monitoring.
