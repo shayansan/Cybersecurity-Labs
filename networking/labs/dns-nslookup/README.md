@@ -28,6 +28,9 @@ What I learned
 - ICMP connectivity does not imply DNS accessibility.
 - DNS traffic (port 53) can be filtered independently by network policies.
 - dig provides more detailed DNS information than nslookup.
+
+
 Additional observation
 - DNS resolution using public DNS worked on a different network (mobile hotspot).
 - Network policies significantly affect DNS behavior.
+
