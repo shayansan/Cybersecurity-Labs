@@ -980,3 +980,154 @@ security note:
 VPNs provide confidentiality, but they do not automatically make a network secure.
 weak authentication, stolen credentials, or compromised endpoints can still lead to breaches.
 for this reason, VPN access should be combined with MFA, device checks, and monitoring.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 28- security concepts
+
+the first important thing in security concepts is data that transmits over the network.
+this type of data usually has little protection as it travels through routers, switches, modems, or other network devices.
+however, there are security controls that protect data in transit, such as firewalls, IDS/IPS, TLS, and IPsec.
+
+we call the type of data that is stored on a storage device data at rest.
+the best methods to protect this type of data are encrypting the whole disk or encrypting the database.
+for example, if someone gains access to a hard drive, they will only see encrypted data and cannot understand its contents.
+
+we can also apply separate permissions for different users to determine who can access which type of data.
+access control is a critical part of protecting data at rest and preventing unauthorized access.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part 29- security technologies
+
+Honeypots are intentionally deployed systems or services designed to look like real, vulnerable targets in order to attract attackers and observe their behavior.
+
+The main idea of a honeypot is deception.
+It pretends to be something valuable, such as a server, a database, an SSH service, or a web application, but it is actually isolated and monitored.
+Any interaction with a honeypot is suspicious by nature, because legitimate users should not be using it.
+
+Honeypots are used to detect attacks, study attacker techniques, and gather threat intelligence.
+When an attacker scans a network or tries to exploit a service and hits a honeypot, security teams can see which tools, payloads, IP addresses, and methods are being used, often before those attacks reach real systems.
+
+There are different levels of honeypots.
+Low-interaction honeypots simulate services and respond in limited ways, which is safer and easier to manage but gives less detail.
+High-interaction honeypots run real systems and applications, allowing attackers to fully interact with them, which provides deep insight but requires strong isolation.
+
+From a network design point of view, honeypots are placed where attackers are likely to look, such as exposed IP ranges, DMZs, or internal segments where no legitimate access should happen.
+They are always heavily monitored, and traffic to and from them is logged and controlled.
+
+From a cybersecurity perspective, honeypots are valuable for early warning and intelligence,
+but they are not preventive controls by themselves and must be part of a broader security strategy.
+
+A honeynet is a group of honeypots that are connected together to look like a real, complete network instead of just a single fake system.
+
+While a honeypot usually imitates one service or one machine, a honeynet imitates an entire environment, such as a small company network with multiple servers, workstations, and services.
+
+Honeynets are mainly used for advanced threat research and detection.
+Because the network looks realistic, attackers are more likely to reveal their full toolset and methods.
+
+Security and isolation are critical in honeynets.
+They must be separated from production networks, outbound traffic must be controlled, and all activity must be logged and analyzed.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+An exploit is a piece of code, technique, or method that takes advantage of a vulnerability in a system, application, or protocol to make it behave in an unintended way.
+
+A vulnerability is the weakness, and the exploit is how that weakness is actually used.
+Without an exploit, a vulnerability is just a risk; with an exploit, it becomes an active threat.
+
+Exploits can be used to crash systems, steal data, bypass authentication, or gain control of a machine.
+They can target operating systems, network services, web applications, browsers, or network protocols.
+
+Some exploits are proof-of-concept, showing that a vulnerability exists.
+Others are fully weaponized and used in real attacks, often inside malware, exploit kits, or phishing campaigns.
+
+From a cybersecurity perspective, exploits are often the step that turns access into compromise.
+This is why patching, intrusion detection, logging, and monitoring are critical defenses.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The CIA triad is a fundamental security model that describes the three main goals of cybersecurity:
+confidentiality, integrity, and availability.
+
+Confidentiality means making sure that information is only accessible to authorized users and systems.
+Examples include encryption, access controls, authentication, and network segmentation.
+
+Integrity means ensuring that data is accurate and has not been altered without authorization.
+Techniques such as hashing, digital signatures, checksums, and change control help protect integrity.
+
+Availability means ensuring that systems and data are accessible when needed.
+It is protected through redundancy, backups, load balancing, monitoring, and protection against denial-of-service attacks.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 30- denial of service
+
+A DDoS (Distributed Denial of Service) attack is an attack where many systems are used together to overwhelm a target with traffic or requests.
+
+The goal is not to steal data, but to make a service unavailable by exhausting bandwidth, CPU, memory, or application resources.
+
+Traffic usually comes from many sources such as botnets, compromised servers, IoT devices, or abused public services.
+This makes DDoS attacks harder to block.
+
+Amplification is a technique used to increase attack strength.
+The attacker sends small requests that cause large responses to be sent to the victim.
+
+DNS amplification is a common example.
+The attacker sends small DNS queries while spoofing the victim’s IP address.
+DNS servers then send large responses to the victim.
+
+This hides the attacker’s real location and creates massive traffic volumes.
+
+------------------------------------------------------------
+
+part 31- mac flooding
+
+A MAC address is a Layer 2 identifier used inside local networks.
+Switches learn MAC addresses dynamically and store them in a MAC (CAM) table.
+
+MAC flooding is an attack where an attacker sends many frames with fake source MAC addresses to overflow the MAC table.
+
+When the table is full, some switches start flooding traffic out of all ports, behaving like a hub.
+This allows attackers to capture traffic not intended for them.
+
+MAC addresses are scoped by VLANs, and switches maintain separate MAC tables per VLAN.
+Breaking VLAN isolation exposes MAC-level information across segments.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 32- ARP and DNS spoofing
+
+ARP spoofing targets the Address Resolution Protocol.
+ARP trusts replies without authentication, making it vulnerable.
+
+In an ARP spoofing attack, the attacker sends forged ARP replies to victims and routers,
+placing themselves in the middle of the communication.
+
+DNS spoofing targets name-to-IP resolution.
+Attackers provide fake DNS responses to redirect traffic to malicious servers.
+
+ARP spoofing is often used to enable DNS spoofing by creating a man-in-the-middle position.
+
+Defenses include Dynamic ARP Inspection, VLAN segmentation, DNSSEC, encrypted DNS, and HTTPS.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+part 33- security rules for firewall
+
+Firewall security rules define what traffic is allowed or blocked.
+
+Rules match traffic based on source, destination, protocol, ports, and sometimes applications.
+
+The default deny principle means blocking everything unless explicitly allowed.
+This reduces attack surface.
+
+Rules should be minimal and specific.
+Firewalls process rules in order, so rule order matters.
+
+Firewalls are used for segmentation between zones like internal networks, DMZs, and external networks.
+
+Overly permissive rules like “allow any to any” increase risk.
+Unused rules should be reviewed and removed regularly.
+
+A screened subnet (DMZ) places public-facing systems in a buffer network between the internet and internal systems.
+
+Traffic passes through multiple filtering points, and trust decreases as traffic moves inward.
+
+Screened subnets reduce impact if a public server is compromised and protect internal assets.
