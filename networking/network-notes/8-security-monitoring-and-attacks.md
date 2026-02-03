@@ -59,8 +59,8 @@ Infrastructure mode is the standard way most Wi-Fi networks work, where wireless
 The access point is usually connected to a wired network, such as a switch or router, which allows wireless users to access internal resources like servers and printers, as well as external networks like the internet.
 This makes infrastructure mode suitable for homes, offices, schools, and enterprise environments.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-logs and monitoring
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* logs and monitoring
 
 Logs and monitoring in networks are about recording what is happening and continuously watching network behavior so you can detect problems, attacks, misconfigurations, and performance issues.
 
@@ -285,3 +285,4 @@ Its results depend heavily on scan configuration, network conditions, and firewa
 
 Misinterpreting Nmap output can lead to false assumptions.
 Understanding how Nmap works is more important than memorizing commands.
+
