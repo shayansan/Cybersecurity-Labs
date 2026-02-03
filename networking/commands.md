@@ -8,6 +8,7 @@ It works by sending ICMP Echo Request messages to a destination and waiting for 
 
 limitation:
 The main limitation of ping is that it only tests ICMP reachability, not whether actual services are available. A system may respond to ping but have all application ports closed, or it may block ICMP entirely while still being fully reachable over TCP or UDP.
+
 on windows : it has the same name (ping) on CMD.
 
 # 2- traceroute:
@@ -19,6 +20,7 @@ It works by sending packets with increasing time-to-live (TTL) values and listen
 limitation:
 The main limitation of traceroute is that it depends on routers sending ICMP responses, which many devices block, rate-limit, or deprioritize. As a result, some hops may appear as missing or show inaccurate latency. 
 Firewalls and load balancers can also obscure the real path, and different protocols (ICMP, UDP, or TCP-based traceroute) may produce different results. Traceroute shows the network path, but it does not reveal security configurations, open services, or whether the destination host itself is actually reachable at the application level.
+
 on windows : its name is tracert on CMD.
 
 # 3-nslookup :
@@ -29,6 +31,7 @@ It is commonly used to resolve a hostname to an IP address, perform reverse look
 
 limitation : 
 The main limitation of nslookup is that it provides only basic DNS information and does not validate the authenticity of DNS responses. It does not check DNSSEC by default and cannot detect whether a response has been spoofed or poisoned. The results also depend on the DNS server being queried, so different servers may return different answers.
+
 on windows : it has the same name (nslookup) on CMD.
 
 # 4-dig:
@@ -39,6 +42,7 @@ It is commonly used to resolve domains to IP addresses, query specific record ty
 
 limitation:
 The main limitation of dig is that it is a diagnostic and observation tool, not a security mechanism. It does not automatically validate DNSSEC unless explicitly configured and interpreted correctly, and it cannot tell you whether a response is malicious if it looks syntactically valid.
+
 on windows : it's the same in window but you have to install a packet before it(ISC.BIND).
 
 # differnces between dig and nslookup
