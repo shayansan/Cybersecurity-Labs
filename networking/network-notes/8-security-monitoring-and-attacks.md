@@ -93,7 +93,7 @@ security note:
 logs are only useful if they are reviewed and retained.
 time synchronization (NTP) is critical, otherwise log timelines become unreliable during investigations.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * security concepts
 
 the first important thing in security concepts is data that transmits over the network.
@@ -107,7 +107,7 @@ for example, if someone gains access to a hard drive, they will only see encrypt
 we can also apply separate permissions for different users to determine who can access which type of data.
 access control is a critical part of protecting data at rest and preventing unauthorized access.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * security technologies
 
 Honeypots are intentionally deployed systems or services designed to look like real, vulnerable targets in order to attract attackers and observe their behavior.
@@ -163,7 +163,7 @@ Techniques such as hashing, digital signatures, checksums, and change control he
 Availability means ensuring that systems and data are accessible when needed.
 It is protected through redundancy, backups, load balancing, monitoring, and protection against denial-of-service attacks.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *denial of service
 
 A DDoS (Distributed Denial of Service) attack is an attack where many systems are used together to overwhelm a target with traffic or requests.
@@ -182,7 +182,7 @@ DNS servers then send large responses to the victim.
 
 This hides the attacker’s real location and creates massive traffic volumes.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * mac flooding
 
 A MAC address is a Layer 2 identifier used inside local networks.
@@ -196,7 +196,7 @@ This allows attackers to capture traffic not intended for them.
 MAC addresses are scoped by VLANs, and switches maintain separate MAC tables per VLAN.
 Breaking VLAN isolation exposes MAC-level information across segments.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * ARP and DNS spoofing
 
 ARP spoofing targets the Address Resolution Protocol.
@@ -212,7 +212,7 @@ ARP spoofing is often used to enable DNS spoofing by creating a man-in-the-middl
 
 Defenses include Dynamic ARP Inspection, VLAN segmentation, DNSSEC, encrypted DNS, and HTTPS.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * security rules for firewall
 
 Firewall security rules define what traffic is allowed or blocked.
@@ -236,7 +236,7 @@ Traffic passes through multiple filtering points, and trust decreases as traffic
 
 Screened subnets reduce impact if a public server is compromised and protect internal assets.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * software tools
 
 Wireshark is a network protocol analyzer that allows you to capture, inspect, and analyze network traffic at a very detailed level.
@@ -260,7 +260,7 @@ security note:
 anyone with access to the network path can capture traffic.
 encryption, secure protocols, and proper segmentation greatly reduce the impact of packet capture tools.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Nmap (Network Mapper) is a network scanning and reconnaissance tool used to discover hosts, services, and security characteristics on a network.
 
 In cybersecurity, it is one of the most fundamental tools because it answers a critical question:
@@ -286,3 +286,6 @@ Its results depend heavily on scan configuration, network conditions, and firewa
 Misinterpreting Nmap output can lead to false assumptions.
 Understanding how Nmap works is more important than memorizing commands.
 
+security note:
+defenders also use Nmap to audit their own networks.
+regular internal scanning helps find misconfigurations before attackers do
