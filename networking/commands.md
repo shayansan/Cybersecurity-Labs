@@ -49,3 +49,27 @@ on windows : it's the same in window but you have to install a packet before it(
 nslookup is a simple, user-friendly tool mainly used for basic DNS troubleshooting. It is good for quickly checking whether a domain name resolves to an IP address and which DNS server is being used. Its output is relatively minimal, which makes it easier for beginners, but it hides many DNS details and offers limited control over how queries are made.
 
 dig is a more advanced and precise tool designed for detailed DNS analysis. It shows full DNS responses, including headers, flags, query times, and authoritative information. It allows fine-grained control over query types, servers, and options, which makes it much more useful for security analysis, debugging, and auditing DNS behavior.
+
+# 5-tcpdump:
+=> is used to capture and analyze network packets in real time.
+
+explanation:
+It works by listening on a network interface and capturing packets that match given filters. tcpdump can display low-level details such as source and destination IP addresses, ports, protocols, and flags. It allows analysts to observe live traffic, troubleshoot network issues, and investigate suspicious activity directly at the packet level.
+
+limitation:
+tcpdump only shows traffic that reaches the network interface, so it cannot capture traffic that is switched away from the host or encrypted payloads in a readable form. It also requires sufficient privileges to run and produces raw output that can be difficult to interpret without strong networking knowledge.
+
+on windows:
+tcpdump is not available by default on Windows CMD. Windows users typically use alternatives like Wireshark or install tcpdump-like tools through environments such as WSL or third-party ports.
+
+# 6-netstat:
+=> is used to display active network connections, listening ports, and network statistics on a system.
+
+explanation:
+It works by querying the operating system’s networking stack and showing information about current TCP and UDP connections, open ports, associated IP addresses, and sometimes the processes using them. In cybersecurity, netstat helps identify which services are running, what ports are open, and whether there are unexpected or suspicious connections.
+
+limitation:
+netstat only shows the current state of the local system and provides no information about remote networks or blocked traffic. It cannot detect whether a connection is malicious by itself and may miss very short-lived connections. Modern systems are also gradually replacing netstat with newer tools that provide more detailed and structured output.
+
+on windows:
+It is available as netstat in Windows CMD and is commonly used with flags such as -an or -ano to display connections and associated process IDs.
