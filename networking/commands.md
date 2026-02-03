@@ -1,4 +1,4 @@
-# here is a place for writing network commands
+# 20 of the most important commands in network (linux and windows)
 
 1- ping => is used to check whether a target host is reachable over a network.
 
