@@ -1,4 +1,5 @@
 * cloud models
+
 we have 3 types of deployment models :
 1- public => for everyone over the internet
 2- private => your own virtualized local data center
@@ -17,7 +18,7 @@ Main difference: IaaS = you manage more, PaaS = provider manages more.
 
 if we want to manage services based on which one is more on provider management it will be like this: SaaS => PaaS=>laaS
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * software defined networking 
 
 SDN is a networking model where the network is controlled by software instead of configuring every switch/router manually.
@@ -35,7 +36,7 @@ most security control decisions happen at the application + controller layer.
 
 now for taking advantages from SDN we use SD-WAN to can check and manage everything in everywhere of a data center with it. we don’t need to hop through a central point because it’s cloud-based application and communicate directly to the cloud.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 * virtual extensible LAN
 
 we need to connect different data centers together and we use DCI for it. it connects multiple data centers together and connect and segments different customer networks.
@@ -53,8 +54,8 @@ ethernet header - IP header - UDP header - VXLAN header - original frame
 
 VXLAN works like “VLAN but over IP” and allows a lot more networks than traditional VLAN (VLAN is limited to 4094).
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Infrastructure as Code
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* Infrastructure as Code
 
 IaC: is a method of creating and managing infrastructure using code files instead of configuring everything manually. infrastructure here can include virtual machines or networks or firewalls or storage.
 
@@ -72,4 +73,5 @@ Why it matters in cybersecurity and IT?
 1- prevents losing important configurations or scripts
 2- helps audit changes and detect unauthorized edits
 3- supports teamwork without overwriting each other’s work
+
 
