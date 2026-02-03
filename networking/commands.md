@@ -98,7 +98,7 @@ arp only shows the local ARP cache and does not actively monitor or prevent ARP 
 on windows:
 It is available as arp in Windows CMD and is commonly used with options like arp -a to display the ARP table.
 
-8-route:
+# 8-route:
 => is used to view and modify the IP routing table of a system.
 
 explanation:
@@ -110,7 +110,7 @@ route only shows routing decisions on the local system and does not reveal how r
 on windows:
 It is available as route in Windows CMD (for example, route print).
 
-9-ipconfig:
+# 9-ipconfig:
 => is used to display and manage IP configuration on a Windows system.
 
 explanation:
@@ -122,7 +122,7 @@ ipconfig provides only local configuration information and does not show active 
 on windows:
 It is available as ipconfig in Windows CMD.
 
-10-ip:
+# 10-ip:
 => is used to configure and monitor network interfaces, routing, and addresses on Linux systems.
 
 explanation:
@@ -134,7 +134,7 @@ ip only affects and shows local system networking. It has a steeper learning cur
 on windows:
 Not available on Windows CMD.
 
-11-ss:
+# 11-ss:
 => is used to display detailed information about network sockets.
 
 explanation:
@@ -146,7 +146,7 @@ ss only shows current socket information and does not provide historical data or
 on windows:
 Not available on Windows CMD.
 
-12-nmap:
+# 12-nmap:
 => is used to discover hosts, open ports, and services on a network.
 
 explanation:
@@ -158,7 +158,7 @@ nmap results depend on firewall rules and network conditions. It does not exploi
 on windows:
 Available on Windows, but must be installed separately.
 
-13-curl:
+# 13-curl:
 => is used to send and receive data using URLs.
 
 explanation:
@@ -170,7 +170,7 @@ curl does not analyze vulnerabilities automatically and only shows responses to 
 on windows:
 Available by default in modern Windows versions.
 
-14-wget:
+# 14-wget:
 => is used to download files from the network.
 
 explanation:
@@ -182,7 +182,7 @@ wget is not interactive and does not inspect traffic or security properties beyo
 on windows:
 Not available by default; requires installation.
 
-15-wireshark:
+# 15-wireshark:
 => is used to capture and analyze network traffic in detail.
 
 explanation:
@@ -194,7 +194,7 @@ Wireshark cannot easily analyze encrypted payloads and only sees traffic visible
 on windows:
 Available on Windows; must be installed separately.
 
-16-iptables:
+# 16-iptables:
 => is used to configure firewall rules on Linux systems.
 
 explanation:
@@ -206,7 +206,7 @@ iptables configuration can be complex and error-prone. Incorrect rules may lock 
 on windows:
 Not available on Windows CMD.
 
-17-firewall-cmd:
+# 17-firewall-cmd:
 => is used to manage firewall rules on Linux systems using firewalld.
 
 explanation:
@@ -218,7 +218,7 @@ firewall-cmd depends on firewalld and abstracts some low-level control, which ma
 on windows:
 Not available on Windows CMD.
 
-18-host:
+# 18-host:
 => is used to perform simple DNS lookups.
 
 explanation:
@@ -230,7 +230,7 @@ host provides limited output compared to dig and lacks advanced DNS analysis fea
 on windows:
 Not available by default.
 
-19-mtr:
+# 19-mtr:
 => is used to combine ping and traceroute functionality.
 
 explanation:
@@ -242,7 +242,7 @@ mtr relies on ICMP or UDP responses, which may be blocked, leading to incomplete
 on windows:
 Not available by default.
 
-20-telnet:
+# 20-telnet:
 => is used to test connectivity to remote services.
 
 explanation:
