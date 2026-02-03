@@ -25,7 +25,7 @@ layer 6=> that get data from the network and do something like character encodin
 
 layer 7=> the layer that we can see what happening in it and has some protocols like HTTPS and….
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***part2- network devices***
 
 router=> A router connects different networks and decides where packets should go next (routing)
@@ -175,7 +175,7 @@ AP = gives Wi-Fi connection inside your local network.
 AP connects:
 Wireless devices ↔ your local network
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ****part 3==> network fundamentals ****
 
 content delivery network(CDN): it uses to transfer data in this part of the world to another part of the world and it’s graphically distributed.
@@ -195,7 +195,7 @@ google.com → IP address
 
 in routers TTL is with hop but in DNS TTL is with second.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 4=>cloud models**
 we have 3 types of deployment models :
 1- public => for everyone over the internet
@@ -215,7 +215,7 @@ Main difference: IaaS = you manage more, PaaS = provider manages more.
 
 if we want to manage services based on which one is more on provider management it will be like this: SaaS => PaaS=>laaS
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 5 : introduction to IP**
 
 what IP protocol does? transfer data from a device to another device in another part of the world
@@ -240,7 +240,7 @@ TCP and UDP ports can be any number between 0 and 65,535. port is just a way for
 
 TCP and UDP port numbers are different from each other. for example, web server has 80 web server port number and email server has 143 port number both on TCP and VOIP server has port number 5004 on UDP server
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ***part 6 -common ports ***
 
 FTP: transfer files between systems unlike other ports FTP has two port numbers TCP 20 and 21 and gives user choice for list, add, delete and ….
@@ -314,7 +314,7 @@ the data is encrypted here but the IP header is not and it can be read by someon
 
 in tunnel mode even IP header is encrypted and it is much more secure than the other one.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 7 – network communication**
 
 unicast -> one of the most important ways to send information in network it sends information from one station directly to other station. search websites, emails or file transfer probably use unicast.
@@ -328,7 +328,7 @@ broadcast: it uses for send information to everyone at once but there is a point
 
 Ethernet is the most common wired networking technology used to connect devices in a LAN (Local Area Network) using cables. it defines how devices communicate at layer 1 and layer 3 by using ethernet cables, mac address, ethernet frames.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 8 – network transceivers**
 
 A transceiver (transmitter + receiver) is a hardware component that sends and receives network signals so devices can communicate
@@ -343,7 +343,7 @@ SFP+ Supports up to 10 Gbps and it uses for 10G uplinks between switches and hig
 
 QSFP is a pluggable transceiver module used for very high-speed network connections, mostly in data centers and core networks.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **part 9 – network topologies**
 
 A star network is a network design where all devices connect to one central device, usually a switch (or sometimes a hub or wireless access point).
@@ -362,8 +362,7 @@ each leaf switch connects to each spine switch and vice versa. leaf switches and
 A point-to-point connection is a direct network link between exactly two devices, where traffic goes only between those two endpoints. for example, router to router link between two branches use this method.
 but this method doesn’t scale well for many devices
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-part 10 – network architecture
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------part 10 – network architecture
 
 Three-tier distribution is a traditional enterprise network design that organizes the network into three layers to make it scalable, manageable, and reliable.
 
@@ -387,7 +386,7 @@ East-West traffic
 Meaning: traffic moving inside the network between internal systems  
 Why it matters in cybersecurity? Most lateral movement happens here after an attacker gets inside and needs segmentation, internal firewalls, and monitoring
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 11 – IPV4 addressing
 
 every device needs a unique IP address to can connect and communicate in the internet.
@@ -424,7 +423,7 @@ we have three ranges for private IP addresses:
 2-172.16.0.0 to 172.31.255.255
 3-192.168.0.0 to 192.168.255.255
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 12 - subnetting
 
 there are three classes for subnetting architecture that not used since 1993
@@ -472,7 +471,7 @@ one subnet for 100 users, one subnet for 40 users, one subnet for 10 users and o
 small note:
 in every subnet the first IP is network address and the last IP is broadcast address and we can’t use them for devices (except some special cases).
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 13 – software defined networking 
 
 SDN is a networking model where the network is controlled by software instead of configuring every switch/router manually.
@@ -490,7 +489,7 @@ most security control decisions happen at the application + controller layer.
 
 now for taking advantages from SDN we use SD-WAN to can check and manage everything in everywhere of a data center with it. we don’t need to hop through a central point because it’s cloud-based application and communicate directly to the cloud.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 14- virtual extensible LAN
 
@@ -509,7 +508,7 @@ ethernet header - IP header - UDP header - VXLAN header - original frame
 
 VXLAN works like “VLAN but over IP” and allows a lot more networks than traditional VLAN (VLAN is limited to 4094).
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 15 – Infrastructure as Code
 
@@ -530,7 +529,7 @@ Why it matters in cybersecurity and IT?
 2- helps audit changes and detect unauthorized edits
 3- supports teamwork without overwriting each other’s work
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 16 – IPV6 addressing
 
 we have almost 20 billion devices in whole of the world and it’s progressing but IPV4 can only support 4.29 billion. therefore, for this problem we made IPV6 that provides a larger address space. IPV4 has 32 bits while IPV6 has 128 bits. we separate them with: instead of.
@@ -556,7 +555,7 @@ security note:
 IPv6 is not automatically “more secure” than IPv4. it can still be attacked if it’s misconfigured.
 also some networks forget to monitor IPv6 traffic, so attackers may use IPv6 to bypass old security rules if firewall/IDS are not configured for it.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 17- routers
 
 the routers have a relatively simple job but the underlying technology is complex. the first step is identify the destination IP address, the router has a table to choose what should it do with packets. if packets are in local routers, they will send easily to that device but if it’s not in the local network, it will forward to next router or gateway to find its path.
@@ -592,7 +591,7 @@ security note:
 Routers are a common target because if attacker controls routing, they can do MITM, redirect traffic, or cause outage.
 so router management should be protected with strong passwords, MFA, and management access should be limited (for example only from admin VLAN).
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 18 -NAT
 
@@ -608,7 +607,7 @@ security note:
 NAT is not a security control by itself, but it hides internal IPs from direct access from the internet.
 real security still needs firewall rules, patching, and proper segmentation.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 19 – VLANs and trunking
 
 LAN-> they’re a group of devices that are in a limited physical area like home or office in the same broadcast domain. In a LAN, devices usually share the same local IP range and can easily reach each other depending on the security rules.
@@ -645,7 +644,7 @@ VLANs improve security but they don’t fully block attacks by themselves.
 if trunk ports are misconfigured attackers may do VLAN hopping, so trunk ports should be limited and not used for normal user devices.
 also guest VLAN should be separated from internal systems.
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 20- spanning tree protocol
 
 Loop protection is the set of mechanisms used to stop Layer 2 loops from happening, because loops in a switched network can create broadcast storms, duplicate frames, and can crash the whole LAN.
@@ -660,8 +659,7 @@ security note:
 STP can be abused by attackers if they plug a rogue switch and try to become the root bridge.
 that’s why features like BPDU Guard and Root Guard are important in enterprise networks.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-part 21- wireless networking
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------part 21- wireless networking
 
 IBSS is a Wi-Fi mode where devices connect directly to each other without using an access point.
 In IBSS, all devices are equal, there is no central controller like an AP, and one of the devices creates the wireless network while others join it. This is often called ad-hoc mode.
@@ -697,7 +695,7 @@ Wireless mesh is a wireless network design where multiple access points or nodes
 
 In a wireless mesh, each node can communicate with nearby nodes and forward traffic for others, so data can travel through multiple paths to reach its destination.
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 22- network documentation
 
 A physical network map is a diagram that shows the real, physical layout of a network and how devices are actually connected to each other.
@@ -759,7 +757,7 @@ Infrastructure mode is the standard way most Wi-Fi networks work, where wireless
 The access point is usually connected to a wired network, such as a switch or router, which allows wireless users to access internal resources like servers and printers, as well as external networks like the internet.
 This makes infrastructure mode suitable for homes, offices, schools, and enterprise environments.
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 23 – SNMP
 
 SNMP is a protocol used to monitor and manage network devices remotely, such as routers, switches, firewalls, servers, and printers.
@@ -790,7 +788,7 @@ if possible use SNMPv3 instead of v1/v2c because it supports encryption and secu
 security note:
 Infrastructure mode is more secure and manageable than ad-hoc mode because it supports authentication, encryption, access control, and centralized monitoring.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 24 – logs and monitoring
 
@@ -825,7 +823,7 @@ security note:
 logs are only useful if they are reviewed and retained.
 time synchronization (NTP) is critical, otherwise log timelines become unreliable during investigations.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 25 – DHCP
 
@@ -906,7 +904,7 @@ SLAAC depends on router advertisements.
 fake or rogue router advertisements can redirect traffic.
 networks often use RA Guard and port controls on switches to block unauthorized router advertisements.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 26 – DNS
 
 DNS is one of the most important concepts in network and cybersecurity because it’s like a translator and hackers have a lot of ways to abuse it for their own profit.
@@ -942,7 +940,7 @@ security note:
 DNS filtering, DNS logging, and anomaly detection are very important defenses.
 unusual domain names, very long queries, or high-frequency DNS requests can be signs of tunneling or malware activity.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 27 – VPN
 
 VPN is a virtual private network that makes a tunnel over the public internet and encrypts data.
@@ -981,7 +979,7 @@ VPNs provide confidentiality, but they do not automatically make a network secur
 weak authentication, stolen credentials, or compromised endpoints can still lead to breaches.
 for this reason, VPN access should be combined with MFA, device checks, and monitoring.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 28- security concepts
 
 the first important thing in security concepts is data that transmits over the network.
@@ -995,7 +993,7 @@ for example, if someone gains access to a hard drive, they will only see encrypt
 we can also apply separate permissions for different users to determine who can access which type of data.
 access control is a critical part of protecting data at rest and preventing unauthorized access.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 29- security technologies
 
@@ -1028,7 +1026,7 @@ Because the network looks realistic, attackers are more likely to reveal their f
 Security and isolation are critical in honeynets.
 They must be separated from production networks, outbound traffic must be controlled, and all activity must be logged and analyzed.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 An exploit is a piece of code, technique, or method that takes advantage of a vulnerability in a system, application, or protocol to make it behave in an unintended way.
 
@@ -1044,7 +1042,7 @@ Others are fully weaponized and used in real attacks, often inside malware, expl
 From a cybersecurity perspective, exploits are often the step that turns access into compromise.
 This is why patching, intrusion detection, logging, and monitoring are critical defenses.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The CIA triad is a fundamental security model that describes the three main goals of cybersecurity:
 confidentiality, integrity, and availability.
@@ -1058,7 +1056,7 @@ Techniques such as hashing, digital signatures, checksums, and change control he
 Availability means ensuring that systems and data are accessible when needed.
 It is protected through redundancy, backups, load balancing, monitoring, and protection against denial-of-service attacks.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 30- denial of service
 
 A DDoS (Distributed Denial of Service) attack is an attack where many systems are used together to overwhelm a target with traffic or requests.
@@ -1077,7 +1075,7 @@ DNS servers then send large responses to the victim.
 
 This hides the attacker’s real location and creates massive traffic volumes.
 
-------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 part 31- mac flooding
 
@@ -1092,7 +1090,7 @@ This allows attackers to capture traffic not intended for them.
 MAC addresses are scoped by VLANs, and switches maintain separate MAC tables per VLAN.
 Breaking VLAN isolation exposes MAC-level information across segments.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 32- ARP and DNS spoofing
 
 ARP spoofing targets the Address Resolution Protocol.
@@ -1108,7 +1106,7 @@ ARP spoofing is often used to enable DNS spoofing by creating a man-in-the-middl
 
 Defenses include Dynamic ARP Inspection, VLAN segmentation, DNSSEC, encrypted DNS, and HTTPS.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 part 33- security rules for firewall
 
 Firewall security rules define what traffic is allowed or blocked.
@@ -1131,3 +1129,59 @@ A screened subnet (DMZ) places public-facing systems in a buffer network between
 Traffic passes through multiple filtering points, and trust decreases as traffic moves inward.
 
 Screened subnets reduce impact if a public server is compromised and protect internal assets.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part 34- software tools
+
+Wireshark is a network protocol analyzer that allows you to capture, inspect, and analyze network traffic at a very detailed level.
+In cybersecurity, it is one of the most important tools because it shows you what is actually happening on the network, not what you assume is happening.
+
+Instead of relying only on logs or configurations, Wireshark lets you see real packets as they move across the wire.
+
+At its core, Wireshark captures packets and decodes them layer by layer.
+This means you can see Ethernet headers, MAC addresses, IP addresses, transport-layer information like TCP or UDP ports, and even application-layer data such as HTTP, DNS, or FTP.
+
+Wireshark also plays a major role in troubleshooting encrypted versus unencrypted traffic.
+While it cannot decrypt strong encryption by default, it can still provide valuable metadata such as IP addresses, ports, certificate exchanges, handshake failures, and traffic patterns.
+
+In controlled environments, Wireshark can be configured with encryption keys to decrypt TLS traffic.
+This is commonly used for testing, debugging, and learning purposes, not for bypassing security in production networks.
+
+From an attacker’s perspective, Wireshark demonstrates why network encryption and segmentation matter.
+On open or compromised networks, Wireshark can capture credentials, session cookies, and sensitive data if insecure protocols like HTTP, FTP, Telnet, or unencrypted DNS are used.
+
+security note:
+anyone with access to the network path can capture traffic.
+encryption, secure protocols, and proper segmentation greatly reduce the impact of packet capture tools.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nmap (Network Mapper) is a network scanning and reconnaissance tool used to discover hosts, services, and security characteristics on a network.
+
+In cybersecurity, it is one of the most fundamental tools because it answers a critical question:
+what is actually exposed and reachable on a target system or network?
+
+At a high level, Nmap works by sending carefully crafted packets to a target and analyzing the responses.
+Based on how a system replies, Nmap can determine whether a host is alive, which ports are open or closed, which are filtered by a firewall, and sometimes even what operating system the target is using.
+
+Nmap can quickly scan a system to identify open ports, closed ports, and filtered ports.
+From a security perspective, this helps reveal unnecessary or forgotten services that increase the attack surface.
+
+Nmap is also widely used for service and version detection.
+Instead of only showing that a port is open, Nmap can often identify what software is running behind that port and sometimes its version.
+
+In cybersecurity assessments and penetration testing, Nmap is often one of the very first tools used.
+Before exploiting anything, an attacker or tester needs visibility.
+Nmap provides that visibility by revealing exposed services, firewall behavior, and network structure.
+
+Despite its power, Nmap has limitations.
+It does not automatically find vulnerabilities, and it cannot bypass strong authentication or encryption.
+Its results depend heavily on scan configuration, network conditions, and firewall rules.
+
+Misinterpreting Nmap output can lead to false assumptions.
+Understanding how Nmap works is more important than memorizing commands.
+
+security note:
+defenders also use Nmap to audit their own networks.
+regular internal scanning helps find misconfigurations before attackers do
