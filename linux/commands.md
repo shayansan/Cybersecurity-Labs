@@ -1,16 +1,18 @@
-## Basic commands
-echo
-whoami
+# Basic commands
 
-## File and directory
-ls
-cd
-pwd
-cat
+1-echo
+2-whoami
 
-## Search and filtering
-find
-grep
+# File and directory
+1-ls
+2-cd
+3-pwd
+4-cat
+
+# Search and filtering
+
+1-find
+2-grep
 
 --------------------------------
 echo
@@ -153,3 +155,4 @@ Notes:
 One of the most important commands for log analysis and incident response.
 
 --------------------------------
+
