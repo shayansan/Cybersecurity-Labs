@@ -197,9 +197,7 @@ Notes:
 Commonly used in scripts and one-liners to avoid running commands if something fails.
 
 --------------------------------
-
->
-
+redirect:
 What it’s for:
 Redirecting command output to a file by overwriting its contents.
 
@@ -215,9 +213,7 @@ Notes:
 Be careful, this will replace the file content if the file already exists.
 
 --------------------------------
-
->>
-
+append:
 What it’s for:
 Redirecting command output to a file by appending to the end of the file.
 
@@ -233,4 +229,3 @@ Notes:
 Safer than > when working with logs because it does not overwrite existing data.
 
 --------------------------------
-
