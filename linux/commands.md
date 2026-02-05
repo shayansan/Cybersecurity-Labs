@@ -197,6 +197,7 @@ Notes:
 Commonly used in scripts and one-liners to avoid running commands if something fails.
 
 --------------------------------
+
 >
 
 What it’s for:
@@ -214,6 +215,7 @@ Notes:
 Be careful, this will replace the file content if the file already exists.
 
 --------------------------------
+
 >>
 
 What it’s for:
@@ -231,3 +233,4 @@ Notes:
 Safer than > when working with logs because it does not overwrite existing data.
 
 --------------------------------
+
