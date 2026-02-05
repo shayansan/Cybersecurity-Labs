@@ -14,6 +14,14 @@
 1-find
 2-grep
 
+# Operators and redirection
+
+1-&
+2-&&
+3->
+4->>
+
+
 --------------------------------
 echo
 
@@ -155,4 +163,71 @@ Notes:
 One of the most important commands for log analysis and incident response.
 
 --------------------------------
+&
 
+What it’s for:
+Running a command in the background without blocking the terminal.
+
+Common usage:
+sleep 30 &
+firefox &
+python script.py &
+
+Useful flags:
+None
+
+Notes:
+Very useful when running long tasks and you want to keep using the terminal at the same time.
+
+--------------------------------
+&&
+
+What it’s for:
+Running the next command only if the previous command succeeds.
+
+Common usage:
+cd /etc && ls
+mkdir test && cd test
+apt update && apt upgrade
+
+Useful flags:
+None
+
+Notes:
+Commonly used in scripts and one-liners to avoid running commands if something fails.
+
+--------------------------------
+>
+
+What it’s for:
+Redirecting command output to a file by overwriting its contents.
+
+Common usage:
+ls > files.txt
+echo "hello" > test.txt
+cat /etc/passwd > passwd_copy.txt
+
+Useful flags:
+None
+
+Notes:
+Be careful, this will replace the file content if the file already exists.
+
+--------------------------------
+>>
+
+What it’s for:
+Redirecting command output to a file by appending to the end of the file.
+
+Common usage:
+echo "new line" >> notes.txt
+date >> log.txt
+grep "error" app.log >> errors.txt
+
+Useful flags:
+None
+
+Notes:
+Safer than > when working with logs because it does not overwrite existing data.
+
+--------------------------------
