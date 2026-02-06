@@ -18,7 +18,7 @@ The goal of this repository is to build a solid and practical Linux foundation, 
 ---
 
 ## Repository Structure
-
+<pre>
 linux/
 ├── README.md
 ├── permissions/
@@ -40,6 +40,7 @@ linux/
 └── exercises/
     ├── README.md
     └── week3_challenges.md
+</pre>
     
 ---
 
@@ -58,4 +59,5 @@ The exercises section documents applied practice rather than theoretical summari
 ## Purpose
 
 This repository is part of my long-term learning path toward security-focused system understanding, where Linux is treated as a working environment rather than a collection of commands.
+
 
