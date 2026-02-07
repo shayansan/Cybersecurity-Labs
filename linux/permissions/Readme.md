@@ -40,6 +40,8 @@ Example:
 chmod 600 file.txt
 Only the owner can read and write the file.
 
+its base and important rule is that x= 1 , r = 4 , w= 2 in permission numbers.
+
 ---
 
 Ownership
@@ -72,3 +74,4 @@ permission_examples.sh
 
 Additional notes and observations are documented in:
 notes.md
+
