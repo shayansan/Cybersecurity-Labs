@@ -1,0 +1,13 @@
+GET /profile?user_id=102 HTTP/1.1
+Host: example.com
+Cookie: session=eyJhbGciOiJIUzI1NiJ9
+User-Agent: Mozilla/5.0
+
+---
+
+POST /transfer HTTP/1.1
+Host: example.com
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+Content-Type: application/x-www-form-urlencoded
+
+amount=100&to=98765
