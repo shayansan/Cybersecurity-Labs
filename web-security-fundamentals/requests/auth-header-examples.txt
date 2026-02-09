@@ -1,0 +1,11 @@
+GET /api/profile HTTP/1.1
+Host: api.example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.fake.payload
+Accept: application/json
+
+---
+
+GET /dashboard HTTP/1.1
+Host: example.com
+Cookie: session=abc123fakevalue
+User-Agent: Mozilla/5.0
