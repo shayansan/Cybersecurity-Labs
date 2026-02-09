@@ -1,0 +1,9 @@
+GET /account HTTP/1.1
+Host: example.com
+Cookie: session=user_session_token
+
+---
+
+GET /account HTTP/1.1
+Host: example.com
+Cookie: session=admin_session_token
