@@ -1,104 +1,77 @@
-Web Security Fundamentals
+# Web Security Fundamentals
 
 This repository documents my hands-on learning process in web application security fundamentals, with a focus on understanding how vulnerabilities arise, how they are tested, and why they exist.
 
-The goal of this repository is not to list definitions or payloads, but to demonstrate attacker mindset, request-level thinking, and practical interaction with real web behaviors.
+The goal of this repository is not to collect definitions or payloads, but to demonstrate attacker mindset, request-level analysis, and practical interaction with real web application behavior.
 
-Scope of this repository
+## Scope
 
 This repository covers:
 
-Core HTTP concepts from a security perspective
+- Core HTTP concepts from a security perspective
+- Session handling and access control fundamentals
+- Common web vulnerabilities and their root causes
+- Manual testing workflows using Burp Suite
+- Analysis of raw HTTP requests and responses
 
-Session handling and access control fundamentals
-
-Common web vulnerabilities and their root causes
-
-Practical testing workflows using Burp Suite
-
-Manual analysis of HTTP requests and responses
-
-Repository structure
+## Repository Structure
 
 notes/
-Contains concise conceptual notes written from an attacker perspective.
+Conceptual notes written from an attacker perspective.
 Each note focuses on why a concept matters for exploitation, not just what it is.
 
 labs/
-Contains documented vulnerability labs.
+Documented vulnerability labs.
 Each lab includes:
-
-observed application behavior
-
-testing logic and thought process
-
-result and security impact
-
-lessons learned
+- observed application behavior
+- testing logic and reasoning
+- result and security impact
+- lessons learned
 
 burp/
-Contains notes and samples related to Burp Suite usage, including:
-
-proxy setup
-
-interception workflow
-
-repeater-based testing
-
-raw intercepted request examples
+Notes and samples related to Burp Suite usage, including:
+- proxy setup and interception flow
+- repeater-based request testing
+- raw intercepted request examples
 
 requests/
-Contains raw HTTP request samples used to understand:
+Raw HTTP request samples used to understand:
+- request structure
+- authentication mechanisms
+- cookie-based session handling
 
-request structure
+## Vulnerabilities Covered
 
-authentication mechanisms
+- Insecure Direct Object Reference (IDOR)
+- Cross-Site Scripting (Reflected and Stored)
+- SQL Injection (basic scenarios)
 
-cookie-based session handling
+## Tools Used
 
-Vulnerabilities covered
+- Burp Suite Community Edition
+- Browser developer tools
+- Manual HTTP request analysis
 
-Insecure Direct Object Reference (IDOR)
-
-Cross-Site Scripting (Reflected and Stored)
-
-SQL Injection (basic scenarios)
-
-Tools used
-
-Burp Suite Community Edition
-
-Browser developer tools
-
-Manual HTTP request analysis
-
-Methodology
+## Methodology
 
 For each topic or vulnerability:
 
-Observe how the application behaves
-
-Identify trust assumptions made by the server
-
-Modify requests in a controlled manner
-
-Analyze responses and security impact
-
-Document lessons learned
+1. Observe application behavior
+2. Identify server-side trust assumptions
+3. Modify requests in a controlled manner
+4. Analyze responses and security impact
+5. Document lessons learned
 
 No automated scanning or payload dumping is included.
 
-What this repository demonstrates
+## What This Repository Demonstrates
 
-Understanding of HTTP as an attack surface
+- Understanding of HTTP as an attack surface
+- Clear distinction between authentication and authorization
+- Practical use of interception and request replay tools
+- Focus on root causes instead of memorization
 
-Ability to reason about authentication vs authorization
-
-Practical use of interception and request replay tools
-
-Focus on root causes instead of memorization
-
-Disclaimer
+## Disclaimer
 
 All examples use non-sensitive, synthetic data and intentionally simplified scenarios.
-This repository is for educational purposes only
+This repository is for educational purposes only.
